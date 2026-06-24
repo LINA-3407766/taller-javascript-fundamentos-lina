@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 10 - Nivel de Inglés</title>
+</head>
+<body>
+
+<script>
+
+// Ejercicio 10 - Evaluación del nivel de inglés de un estudiante
+
+// Solicitar el nombre y las notas del estudiante
+let nombre = prompt("Ingrese el nombre del estudiante:");
+
+let speaking = parseFloat(prompt("Nota de Speaking (0-100):"));
+let listening = parseFloat(prompt("Nota de Listening (0-100):"));
+let reading = parseFloat(prompt("Nota de Reading (0-100):"));
+let writing = parseFloat(prompt("Nota de Writing (0-100):"));
+
+// Guardar las notas en un arreglo
+let notas = [speaking, listening, reading, writing];
+
+let suma = 0;
+let notaBaja = notas[0];
+
+// Recorrer el arreglo para calcular la suma y encontrar la nota más baja
+for (let i = 0; i < notas.length; i++) {
+
+    suma += notas[i];
+
+    if (notas[i] < notaBaja) {
+        notaBaja = notas[i];
+    }
+
+}
+
+// Calcular el promedio general
+let promedio = suma / notas.length;
+
+let nivel;
+
+// Determinar el nivel de inglés según el promedio obtenido
+if (promedio >= 90) {
+
+    nivel = "C2 - Maestría";
+
+} else if (promedio >= 75) {
+
+    nivel = "C1 - Avanzado";
+
+} else if (promedio >= 60) {
+
+    nivel = "B2 - Intermedio alto";
+
+} else if (promedio >= 45) {
+
+    nivel = "B1 - Intermedio";
+
+} else {
+
+    nivel = "A2 - Básico";
+
+}
+
+// Mostrar los resultados de la evaluación
+document.write("<h2>Resultado de la Evaluación</h2>");
+
+document.write("Nombre: " + nombre + "<br><br>");
+
+document.write("Speaking: " + speaking + "<br>");
+document.write("Listening: " + listening + "<br>");
+document.write("Reading: " + reading + "<br>");
+document.write("Writing: " + writing + "<br><br>");
+
+document.write("Nota más baja: " + notaBaja + "<br><br>");
+
+document.write("Promedio: " + promedio.toFixed(2) + "<br><br>");
+
+document.write("Nivel asignado: " + nivel);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6 - Cambio de Cliente</title>
+</head>
+<body>
+
+<script>
+
+// Ejercicio 6 - Cálculo de cambio en una compra
+
+// Solicitar los datos de la compra
+let valorCompra = parseFloat(prompt("Ingrese el valor total de la compra:"));
+let valorEntregado = parseFloat(prompt("Ingrese el valor entregado por el cliente:"));
+
+// Verificar si el dinero entregado es suficiente
+if (valorEntregado < valorCompra) {
+
+    let faltante = valorCompra - valorEntregado;
+
+    alert("Dinero insuficiente, faltan $" + faltante);
+
+} else if (valorEntregado == valorCompra) {
+
+    alert("No hay cambio");
+
+} else {
+
+    // Calcular el cambio a devolver
+    let cambio = valorEntregado - valorCompra;
+
+    // Mostrar el resultado final
+    document.write("<h2>Resultado</h2>");
+    document.write("Valor de la compra: $" + valorCompra + "<br><br>");
+    document.write("Valor entregado por el cliente: $" + valorEntregado + "<br><br>");
+    document.write("Cambio a devolver: $" + cambio);
+
+}
+
+</script>
+
+</body>
+</html>

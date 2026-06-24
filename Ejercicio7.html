@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 7 - Planes de Datos</title>
+</head>
+<body>
+
+<script>
+
+// Ejercicio 7 - Selección de planes de datos móviles
+
+// Solicitar el nombre del cliente y el plan deseado
+let nombre = prompt("Ingrese su nombre:");
+let opcion = parseInt(prompt("Seleccione un plan:\n1 = Plan 1 (2 GB)\n2 = Plan 2 (5 GB)\n3 = Plan 3 (10 GB)"));
+
+// Formatear el nombre con la primera letra en mayúscula
+nombre = nombre.toLowerCase();
+nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1);
+
+let plan;
+let gigas;
+let precio;
+
+// Determinar el plan seleccionado usando switch
+switch(opcion) {
+
+    case 1:
+        plan = "Plan 1";
+        gigas = "2 GB";
+        precio = 25000;
+        break;
+
+    case 2:
+        plan = "Plan 2";
+        gigas = "5 GB";
+        precio = 45000;
+        break;
+
+    case 3:
+        plan = "Plan 3";
+        gigas = "10 GB";
+        precio = 75000;
+        break;
+
+    default:
+        alert("Plan no disponible");
+}
+
+// Mostrar la información del cliente y del plan elegido
+if(opcion >= 1 && opcion <= 3){
+
+    document.write("<h2>Información del Cliente</h2>");
+
+    document.write("Nombre: " + nombre + "<br><br>");
+
+    document.write("Plan elegido: " + plan + "<br><br>");
+
+    document.write("Gigas incluidos: " + gigas + "<br><br>");
+
+    document.write("Valor mensual: $" + precio);
+
+}
+
+</script>
+
+</body>
+</html>

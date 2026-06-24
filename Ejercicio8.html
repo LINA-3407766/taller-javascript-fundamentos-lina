@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8 - Descuento Papelería</title>
+</head>
+<body>
+
+<script>
+
+// Ejercicio 8 - Cálculo de descuentos en productos de papelería
+
+// Solicitar los datos del producto
+let producto = prompt("Ingrese el nombre del producto:");
+let precio = parseFloat(prompt("Ingrese el precio original:"));
+let descuento = parseFloat(prompt("Ingrese el porcentaje de descuento:"));
+
+// Validar que el descuento esté dentro del rango permitido
+if (descuento < 1 || descuento > 70) {
+
+    alert("Porcentaje no válido, debe estar entre 1% y 70%");
+
+} else {
+
+    // Calcular el valor del descuento y el precio final
+    let valorDescuento = precio * descuento / 100;
+    let precioFinal = precio - valorDescuento;
+
+    // Determinar el mensaje según el porcentaje de descuento
+    let mensaje = descuento > 50
+        ? "¡Oferta especial!"
+        : "Precio de temporada";
+
+    // Mostrar los resultados al usuario
+    document.write("<h2>Resultado</h2>");
+
+    document.write("Producto: " + producto + "<br><br>");
+
+    document.write("Precio original: $" + precio + "<br><br>");
+
+    document.write("Descuento aplicado: $" + valorDescuento + "<br><br>");
+
+    document.write("Precio final: $" + precioFinal + "<br><br>");
+
+    document.write(mensaje);
+
+}
+
+</script>
+
+</body>
+</html>
